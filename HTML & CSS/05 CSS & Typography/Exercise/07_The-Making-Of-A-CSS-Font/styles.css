@@ -1,1 +1,40 @@
 /* TODO: style the html */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orienta&display=swap');
+
+body {
+    background-color: darkred;
+}
+h1 {
+    font-family: Righteous, cursive;
+    font-size: 45px;
+    font-weight: normal;
+    line-height: 60px;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+}
+h2 {
+    font-size: 30px;
+    line-height: 50px;
+    letter-spacing: -1px;
+    color: #DFBF84;
+    text-transform: uppercase;
+    text-align: center;
+}
+p {
+    font-family: Orienta, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: #f6f6f6;
+    text-align: center;
+}
+
+/* • <p>:
+◦ Font: 'Orienta'
+• Use CSS import: @import url('https://fonts.googleapis.com/css2?family=Orienta&display=swap');
+◦ Generic Font: sans-serif
+◦ Font size: 16px
+◦ Height of the line: 24px
+◦ Text color: #f6f6f6
+◦ Align the text to the center */
