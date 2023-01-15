@@ -1,0 +1,51 @@
+
+    *,
+    *:before,
+    *:after {
+    box-sizing: inherit;
+    }
+
+html {
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    
+}
+body {
+    background-color: rgb(238, 238, 238);
+    color: rgb(51, 51, 51);
+    margin-left: 50px;
+}
+
+article {
+    width: 60%;
+    display: inline-block;
+}
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+h1,
+h2,
+aside p {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+}
+ul {
+    list-style: square;
+}
+img {
+    width: 60%;
+}
+
+aside {
+    display: inline-block;
+    vertical-align: top;
+}
+aside p {
+    font-size: 24px;
+}
