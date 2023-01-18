@@ -66,10 +66,24 @@ li {
     margin-right: 30px;
     width: 15%;
 }
-
+.block-al {
+    display: inline-block;
+    width: 40%;
+}
 
 blockquote {
     font-family: Georgia, serif;
+    display: inline-block;
+    width: 40%;
+    border-left: 2px solid gray;
+    padding-left: 20px;
+    vertical-align: top;
+    font-style: italic;
+    color: grey;
+    
+}
+blockquote p:last-child {
+    text-align: end;
 }
 
 aside {
