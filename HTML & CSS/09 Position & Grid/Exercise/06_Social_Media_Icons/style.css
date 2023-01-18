@@ -7,8 +7,9 @@ ul {
 }
 
 li {
+    text-align: center;
     display: inline-block;
-    padding: 10px;
+    margin: 10px;
 }
 
 a {
@@ -16,8 +17,6 @@ a {
     font-size: 20px;
     padding: 15px;
     border-radius: 50%;
-    
-    
 }
 
 .facebook:hover {
