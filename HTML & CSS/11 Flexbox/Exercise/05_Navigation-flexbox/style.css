@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+header {
+    border-bottom: 2px solid rgb(0, 0, 0);
+    display: flex;
+}
+ header nav ul {
+    list-style: none;
+    display: flex;
+ }
+ a {
+    color: rgb(0, 153, 0);
+ }
