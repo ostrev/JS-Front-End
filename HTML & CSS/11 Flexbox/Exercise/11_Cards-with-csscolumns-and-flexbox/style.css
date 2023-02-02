@@ -1,0 +1,43 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    background-color: rgb(238, 238, 238);
+    justify-content: center;
+    
+
+}
+
+.cards-layout {
+    display: flex;
+    
+}
+
+.masonry {
+    width: 80vw;
+    height: 1500px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+}
+
+h2 {
+    display: block;
+}
+
+.card {
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 30%;
+}
+
+img {
+    width: 100%;
+}
