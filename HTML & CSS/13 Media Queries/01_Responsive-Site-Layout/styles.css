@@ -65,4 +65,9 @@ main ul {
             "main main"
             "footer footer";
     }
+    header h1 {
+        display: block;
+        margin-bottom: 5px;
+
+    }
 }
