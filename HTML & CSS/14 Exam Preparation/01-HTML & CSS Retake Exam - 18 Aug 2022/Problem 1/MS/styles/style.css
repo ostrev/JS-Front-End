@@ -1,0 +1,97 @@
+@import url("./reset.css");
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
+:root {
+	--bg-section: url("../images/background.png");
+	--bg-form:url("../images/form-background.png");
+	--clr-gray: #d9d9d9;
+	--clr-red: #a24036;
+}
+html {
+	font-size: 12px;
+}
+
+.btn,
+.input {
+	height: 30px;
+	border: 1px solid var(--clr-gray);
+	border-radius: 15px;
+}
+
+body {
+	font-family: "Mulish", sans-serif;
+}
+label {
+	width: 100%;
+}
+.input {
+	width: 100%;
+}
+
+.reg-form {
+	width: 100vw;
+    height: 100vh;
+	background-image: var(--bg-section);
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card {
+	display: flex;
+	
+	background-image: var(--bg-form);
+	background-size: cover;
+	width: 50%;
+	height: 60%;
+}
+.card__form {
+	padding-left: 30px;
+	padding-top: 60px;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+}
+
+.title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+}
+.names {
+	display: flex;
+	gap: 1rem;
+}
+.fname > *,
+.lname > *{
+	display: block;
+}
+.email,
+.pass,
+.cnpass {
+	display: flex;
+	flex-direction: column;
+}
+.checkbox {
+	display: flex;
+	justify-content: left;
+	align-items: center;
+}
+
+.checkbox label {
+	flex-shrink: 0;
+}
+
+.btn {
+	background-color: var(--clr-red);
+	color: white;
+	grid-area: btn;
+	width: 50%;
+	margin: 0 auto;
+}
+
