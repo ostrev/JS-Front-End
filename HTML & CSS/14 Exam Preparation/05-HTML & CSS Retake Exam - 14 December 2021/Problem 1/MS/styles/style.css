@@ -1,0 +1,105 @@
+@import url("./reset.css");
+@import url("https://fonts.google.com/specimen/Courgette");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+	/* --bg-section: url("../image/image1.jpg"); */
+	--bg-cards:#f7f7f7;
+
+	--clr-green:#a8c442;
+	--clr-dark:#1e1e1e;
+
+	--clr-gray: #676767;
+
+	--clr-red: #bc2c2c;
+	--clr-red-lines:#c34141;
+	--clr-white:#fff;
+	--clr-black:#000000;	
+}
+
+/* Buttons */
+.btn {
+	border: none;
+	background-color: var(--clr-green);
+	color: var(--clr-white);
+	font-size: 0.6rem;
+	margin-bottom: 1rem;
+	font-size: 0.75rem;
+	padding: 0.5rem 1rem;
+	border-radius: 1rem;
+}
+
+
+
+html {
+	font-family: 'Poppins', sans-serif;
+	
+}
+body {
+	background-color: var(--bg-gray);
+}
+
+/* CARDS */
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+}
+
+.title__container{
+	margin-bottom: 4rem;
+}
+
+.title {
+	font-size: 1.75rem;
+	font-weight: bold;
+	letter-spacing: 0.125rem;
+	text-align: center;
+	margin-bottom: 1rem;
+}
+.title span {
+	color: var(--clr-green);
+}
+
+.title__info {
+	font-weight: 400;
+	color: var(--clr-gray);
+	font-size: 1rem;
+}
+
+
+.cards {
+	display: flex;
+	gap: 1.5rem;
+	align-items: start;
+	justify-content: center;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 300px;
+	height: 450px;
+	background-color: var(--bg-cards);
+	gap: 1rem;
+	overflow: hidden;
+}
+
+
+.card__content {
+	padding: 1rem;
+}
+.card__title {
+	margin-bottom: 1rem;
+}
+.card__info {
+	color: var(--clr-gray);
+	font-size: 0.75rem;
+	margin-bottom: 1rem;
+}
