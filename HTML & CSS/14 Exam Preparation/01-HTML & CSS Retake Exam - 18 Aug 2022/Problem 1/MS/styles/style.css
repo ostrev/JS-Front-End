@@ -39,11 +39,13 @@ label {
 
 .card {
 	display: flex;
-	
+	border-radius: 2rem;
+	overflow: hidden;
 	background-image: var(--bg-form);
 	background-size: cover;
 	width: 50%;
 	height: 60%;
+	box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
 }
 .card__form {
 	padding-left: 30px;
@@ -57,25 +59,36 @@ label {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin-bottom: 2rem;
 }
 
 .form {
 	display: flex;
 	flex-direction: column;
 }
+.form label:not(:last-child) {
+	margin-bottom: 0.25rem;
+	color: var(--clr-gray);
+}
+.names input {
+	margin-top: 0.25rem;
+}
 .names {
 	display: flex;
 	gap: 1rem;
+	justify-content: stretch;
+	margin-bottom: 1rem;
 }
-.fname > *,
-.lname > *{
-	display: block;
+.fname, .lname {
+	width: 100%;
 }
+
 .email,
 .pass,
 .cnpass {
 	display: flex;
 	flex-direction: column;
+	margin-bottom: 1rem;
 }
 .checkbox {
 	display: flex;
@@ -85,6 +98,15 @@ label {
 
 .checkbox label {
 	flex-shrink: 0;
+}
+
+.checkbox label {
+	color: var(--clr-gray);
+}
+
+.checkbox input {
+	accent-color: var(--clr-gray);
+	
 }
 
 .btn {
