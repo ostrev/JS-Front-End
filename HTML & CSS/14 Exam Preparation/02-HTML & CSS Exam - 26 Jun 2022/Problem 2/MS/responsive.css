@@ -1,0 +1,58 @@
+@media (max-width:600px) {
+    html {
+        font-size: 12px;
+    }
+
+    .left-to-right:first-child {
+        height: min-content;
+        
+    }
+    main .left-to-right article {
+        width: 100%;
+        height: min-content;
+        padding: 0;
+        border-radius: 10%;
+        
+        
+    }
+    .left-to-right article p {
+        margin: 0;
+    }
+    article > p {
+        font-size: 1.25rem;
+        padding: 1rem;
+    }
+    article button {
+        display: none;
+    }
+
+    main section:nth-child(2), 
+    main section:nth-child(4) {
+        display: flex;
+        flex-direction: column;
+        margin: 40px;
+        
+    }
+
+    form {
+        width: 100%;
+        font-size: 1.7rem;
+    }
+    
+    
+    form label:last-child{
+        display: flex;
+    }
+   
+    section form label input, section form textarea {
+        width: 100%;
+        
+    }
+   main section:nth-child(4) article {
+    
+    margin-left: 0;
+    margin-right: 0;
+    }
+}   
+
+
