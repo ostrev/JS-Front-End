@@ -60,6 +60,7 @@ function road(speed, typeRoad) {
         return status;
     }
 }
+
 road(70, 'city');
 road(21, 'residential');
 road(120, 'interstate');
