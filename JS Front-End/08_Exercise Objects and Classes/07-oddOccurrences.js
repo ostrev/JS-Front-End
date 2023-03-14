@@ -10,11 +10,7 @@ function oddOcc(input){
         }
     }
     let result = new Array(...output);
-    console.log(result.join(' '))
-    // for (const item of output) {
-    //     console.log(item);
-    //   }
-    
+    console.log(result.join(' '))  
 }
 
 oddOcc('Java C# Php PHP Java PhP 3 C# 3 1 5 C#');
