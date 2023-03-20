@@ -4,33 +4,32 @@ function solve() {
 
     const tbodyRef = document.getElementsByTagName('tbody')[0];
     
-
     generateBtnRef.addEventListener('click', handler);
     buyBtnRef.addEventListener('click', handlerBuy);
 
     function handlerBuy() {
         const inputCheckboxRef = Array.from(document.querySelectorAll('input:checked'));
         let resultStr = 'Bought furniture: ';
-        let bought = [] 
+        let bought = [];
         let sum = 0;
         let decFactorOutput = 0;
-        // debugger
+    
         for (let input of inputCheckboxRef) {
-            let parent = input.parentNode.parentNode
-            let listInput = Array.from(parent.querySelectorAll('td > p'))
+            let parent = input.parentNode.parentNode;
+            let listInput = Array.from(parent.querySelectorAll('td > p'));
             bought.push(listInput[0].textContent);
             sum += Number(listInput[1].textContent);
             decFactorOutput += Number(listInput[2].textContent);
-        };
+        }
 
         resultStr += bought.join(', ')
         resultStr += '\n';
         resultStr += `Total price: ${sum.toFixed(2)}` + '\n';
-        resultStr += `Average decoration factor: ${decFactorOutput/bought.length}`
+        resultStr += `Average decoration factor: ${decFactorOutput/bought.length}`;
         
-        buyTextarea.textContent = resultStr
-        
-    };
+        buyTextarea.textContent = resultStr;
+
+    }
     
     function handler() {
         const generateTextarea = JSON.parse(generateTextareaRef.value);
@@ -58,19 +57,11 @@ function solve() {
             let fifthColumn = document.createElement('td');
             fifthColumn.appendChild(elementCreate('input', '', fifthColumn, '', '', { type:'checkbox' }));
             row.appendChild(fifthColumn);
-        };
+        }
         
-    };
-
-
-
+    }
 
     function elementCreate(type, content, parentNode, id, classes, attributes) {
-        // type = string
-        // content = string (text content)
-        // id = string
-        // classes = array of strings
-        // attributes = object
         const htmlElement = document.createElement(type);
 
         if (content && type !== 'input') {
@@ -89,19 +80,16 @@ function solve() {
             htmlElement.id = id;
         }
 
-        // ['list', 'item']
         if (classes) {
             htmlElement.classList.add(...classes);
         }
 
-        // {src: 'link to image', href: 'link to site', type: 'checkbox' }
         if (attributes) {
             for (const key in attributes) {
-                htmlElement.setAttribute(key, attributes[key])
+                htmlElement.setAttribute(key, attributes[key]);
             }
         }
 
         return htmlElement;
-
     }
 }
