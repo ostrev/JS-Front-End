@@ -2,26 +2,26 @@ function attachEvents() {
     const BASE_URL = 'http://localhost:3030/jsonstore/collections/books';
     const loadBooksBtnRef = document.getElementById('loadBooks');
     const titleInputRef = document.querySelector('[name="title"]');
-    // da promenq selektorite
     const authorInputRef = document.querySelector('[name="author"]');
     const submitBtnRef = document.querySelector('#form > button');
     const formRef = document.querySelector('#form > h3');
-
 
     loadBooksBtnRef.addEventListener('click', handlerLoad);
     submitBtnRef.addEventListener('click', handlerSubmit);
 
     let library = {};
     let currentEditId = null;
+
     function handlerLoad() {
+        const titleInputRef = document.querySelector('[name="title"]');
+        const authorInputRef = document.querySelector('[name="author"]');
         const tableBodyRef = document.querySelector('table > tbody');
         formRef.textContent = 'FORM';
         submitBtnRef.textContent = 'Submit'
         titleInputRef.value = '';
         authorInputRef.value = '';
+        tableBodyRef.innerHTML = '';
 
-
-        tableBodyRef.innerHTML = ''
         fetch(BASE_URL)
             .then((res) => res.json())
             .then((data) => {
@@ -40,31 +40,11 @@ function attachEvents() {
                 }
 
                 document.querySelectorAll('[name="edit"]').forEach(item => {
-                    item.addEventListener('click', event => {
-                        let idEditBtn = event.currentTarget.id;
-                        formRef.textContent = 'Edit FORM';
-                        submitBtnRef.textContent = 'Save'
-                        for (let key in library) {
-                            if (key === idEditBtn) {
-                                titleInputRef.value = library[key].title;
-                                authorInputRef.value = library[key].author;
-                                currentEditId = key
-                                break
-                            }
-                        }
-                        console.log(idEditBtn)
-                    })
+                    item.addEventListener('click', editHandler)
                 })
 
                 document.querySelectorAll('[name="delete"]').forEach(item => {
-                    item.addEventListener('click', event => {
-                        let idDelBtn = event.currentTarget.id
-                        console.log(idDelBtn)
-                        fetch(`${BASE_URL}/${idDelBtn}`, { method: 'DELETE' })
-                            .then(() => { })
-                            .then(handlerLoad)
-                            .catch((err) => console.error(err))
-                    })
+                    item.addEventListener('click', deleteHandler)
                 })
 
             })
@@ -101,6 +81,33 @@ function attachEvents() {
         }
     }
 
+    function editHandler(event) {
+        if (event) {
+            event.preventDefault()
+        }
+        let idEditBtn = event.currentTarget.id;
+        formRef.textContent = 'Edit FORM';
+        submitBtnRef.textContent = 'Save'
+        for (let key in library) {
+            if (key === idEditBtn) {
+                titleInputRef.value = library[key].title;
+                authorInputRef.value = library[key].author;
+                currentEditId = key
+                break
+            }
+        }
+    }
+
+    function deleteHandler(event) {
+        if (event) {
+            event.preventDefault()
+        }
+        let idDelBtn = event.currentTarget.id
+                        fetch(`${BASE_URL}/${idDelBtn}`, { method: 'DELETE' })
+                            .then(() => { })
+                            .then(handlerLoad)
+                            .catch((err) => console.error(err))
+    }
 }
 
 attachEvents();
