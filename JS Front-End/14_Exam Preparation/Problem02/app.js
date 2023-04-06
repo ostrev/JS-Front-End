@@ -17,16 +17,19 @@ function solve() {
     otherDomSelectors.addBtn.addEventListener('click', addHandler);
 
     let totalLikes = 0
+    
     function addHandler(event) {
-        // event?.preventDefault();
-        const {genre, name, author, date} = inputDomSelectors
+        
+        event.preventDefault();
+        let allInputsAreNonEmpty = Object.values(inputDomSelectors)
+        .every((input) => input.value !== '');
 
-        let allFieldsAreValid = Object.values(inputDomSelectors)
-            .every((input) => input.value === '');
-        if (allFieldsAreValid) {
-            return
+        if (!allInputsAreNonEmpty) {
+        console.log("HAS INVALID");
+        return;
         }
 
+        const {genre, name, author, date} = inputDomSelectors
         let newSong = createElement('div', null, null, otherDomSelectors.allHitsContainer, null, ['hits-info']);
         createElement('img', null, null, newSong, null, null, {src: "./static/img/img.png"});
         createElement('h2', `Genre: ${genre.value}`, null, newSong);
@@ -36,34 +39,29 @@ function solve() {
         let saveBtn = createElement('button', 'Save song', null, newSong, null, ['save-btn']);
         let likeBtn = createElement('button', 'Like song', null, newSong, null, ['like-btn']);
         let deleteBtn = createElement('button', 'Delete', null, newSong, null, ['delete-btn']);
-
-        document.querySelector('form').reset();
-        
         saveBtn.addEventListener('click', saveHandler);
         likeBtn.addEventListener('click', likeHandler);
         deleteBtn.addEventListener('click', deleteHandler);
+        document.querySelector('form').reset();
     }
 
-    function saveHandler(event) {
-        // event?.preventDefault();
+    function saveHandler() {
         const divContainer = this.parentNode;
         const saveBtn = divContainer.querySelector('.save-btn');
-        const likeBtn = this.parentNode.querySelector('.like-btn');
+        const likeBtn = divContainer.querySelector('.like-btn');
         otherDomSelectors.savedContainer.appendChild(divContainer);
-        saveBtn.remove()
-        likeBtn.remove()
+        saveBtn.remove();
+        likeBtn.remove();
+
     }
 
-    function likeHandler(event) {
-        // event?.preventDefault()
-        
+    function likeHandler() {
         totalLikes += 1;
         otherDomSelectors.likes.textContent = `Total Likes: ${totalLikes}`;
         this.setAttribute('disabled', true);
     }
 
-    function deleteHandler(event) {
-        // event?.preventDefault()
+    function deleteHandler() {
         const divContainer = this.parentNode;
         divContainer.remove()
 
@@ -113,7 +111,3 @@ function solve() {
     }
 
 }
-
-Unexpected error: expected 
-'<imgsrc="./static/img/img.png"><h2>Genre:Pop</h2><h2>Name:PondeReplay</h2><h2>Author:Rihanna</h2><h2>Date:26.11.2009</h2><buttonclass="save-btn">Savesong</button><buttonclass="like-btn">Likesong</button><buttonclass="delete-btn">Delete</button>' to equal 
-'<imgsrc="./static/img/img.png"><h2>Genre:Pop</h2><h2>Name:PondeReplay</h2><h2>Author:Rihanna</h2><h3>Date:26.11.2009</h3><buttonclass="save-btn">Savesong</button><buttonclass="like-btn">Likesong</button><buttonclass="delete-btn">Delete</button>'
