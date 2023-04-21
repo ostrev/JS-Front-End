@@ -37,7 +37,7 @@ function solve(input) {
             }
         }
     }
-    console.log(container.join(', '))
+    console.log(initialList.join(', '))
 }
 
 solve(["Tomatoes!Potatoes!Bread",
