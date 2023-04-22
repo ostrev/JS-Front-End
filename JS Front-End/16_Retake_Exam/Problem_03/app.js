@@ -7,8 +7,6 @@ function solve() {
         type: document.getElementById('course-type'),
         description: document.getElementById('description'),
         teacher: document.getElementById('teacher-name'),
-
-
     }
 
     otherDomSelectors = {
@@ -17,7 +15,6 @@ function solve() {
         addBtn: document.getElementById('add-course'),
         editBtn: document.getElementById('edit-course'),
         divList: document.getElementById('list'),
-
     }
 
     otherDomSelectors.loadBtn.addEventListener('click', loadHandler);
@@ -53,7 +50,7 @@ function solve() {
         if (event) {
             event.preventDefault();
         } 
-    
+
         currentId = event.currentTarget.parentNode.id
         const itemForRemove = event.currentTarget.parentNode
         let obj = {title: event.currentTarget.parentNode.children[0].textContent,
@@ -72,7 +69,6 @@ function solve() {
         otherDomSelectors.addBtn.setAttribute('disabled', true);
 
     }
-
     function finishHandler(event) {
         if (event) {
             event.preventDefault();
@@ -84,7 +80,6 @@ function solve() {
             .then(loadHandler)
             .catch(errorHandler)
     }
-
     function addHandler(event){
         if (event) {
             event.preventDefault();
@@ -112,7 +107,6 @@ function solve() {
 
         otherDomSelectors.formRef.reset()
     }
-
     function editHandler(event) {
         if (event) {
             event.preventDefault();
@@ -135,7 +129,6 @@ function solve() {
         otherDomSelectors.editBtn.setAttribute('disabled', true);
         otherDomSelectors.addBtn.removeAttribute('disabled');
     }
-
     function errorHandler() {
         console.error("ERROR")
     }
